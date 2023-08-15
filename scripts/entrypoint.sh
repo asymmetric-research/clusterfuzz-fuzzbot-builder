@@ -1,5 +1,3 @@
-#!/bin/ash
+#!/bin/bash
 set -exo pipefail
-
-cp -r /firedancer/opt/ opt/
-exec $@
+exec bash -c "$@"
