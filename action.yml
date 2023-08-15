@@ -1,5 +1,5 @@
-name: 'Firedancer Alpine Builder'
-description: 'Provides a build environment for Firedancer on Alpine'
+name: 'Firedancer Fuzzbot Builder'
+description: 'Provides a build environment for Firedancer on Fuzzbot'
 inputs:
   command:
     description: command to execute
