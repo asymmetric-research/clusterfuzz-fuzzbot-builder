@@ -10,4 +10,5 @@ bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 
 ln -s ../lib/llvm-17/bin/clang clang
 ln -s ../lib/llvm-17/bin/clang++ clang++
+rm -r /usr/include/x86_64-linux-gnu/
 
