@@ -23,7 +23,8 @@ DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
   gcc-multilib \
   llvm \
   lcov \
-  protobuf-compiler
+  protobuf-compiler \
+  cmake
 
 
 cd /usr/bin
