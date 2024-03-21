@@ -13,7 +13,18 @@ DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
   software-properties-common \
   gnupg \
   linux-headers-generic \
-  librocksdb-dev
+  librocksdb-dev \
+  autoconf \
+  gettext \
+  automake \
+  autopoint \
+  flex \
+  bison \
+  gcc-multilib \
+  llvm \
+  lcov \
+  protobuf-compiler
+
 
 cd /usr/bin
 
@@ -25,6 +36,7 @@ chmod +x llvm.sh
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source "$HOME/.cargo/env"
 rustup toolchain install nightly
+rustup toolchain add 1.76.0-x86_64-unknown-linux-gnu
 rustup default nightly
 rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
 
