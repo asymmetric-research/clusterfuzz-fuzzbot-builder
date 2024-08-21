@@ -15,7 +15,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 
 cd /usr/bin
 
-wget https://fuzzcorp-dist-a9302fb.s3.us-east-2.amazonaws.com/llvmorg-17.0.6.zip
+curl -o llvmorg-17.0.6.zip https://fuzzcorp-dist-a9302fb.s3.us-east-2.amazonaws.com/llvmorg-17.0.6.zip
 unzip llvmorg-17.0.6.zip
 
 # install rust
