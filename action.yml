@@ -5,6 +5,7 @@ inputs:
     description: command to execute
     required: true
 runs:
+  using: "composite"
   steps:
     - name:
       shell: bash
