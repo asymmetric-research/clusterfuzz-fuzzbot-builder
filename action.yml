@@ -7,6 +7,7 @@ inputs:
 runs:
   steps:
     - name:
+      shell: bash
       run: |
         ls
         docker --help
