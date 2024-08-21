@@ -5,7 +5,8 @@ inputs:
     description: command to execute
     required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.command }}
+  steps:
+    - name:
+      run: |
+        ls
+        docker --help
