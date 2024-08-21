@@ -11,7 +11,8 @@ DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
   software-properties-common \
   gnupg \
   linux-headers-generic \
-  librocksdb-dev
+  librocksdb-dev \
+  unzip
 
 cd /usr/bin
 
