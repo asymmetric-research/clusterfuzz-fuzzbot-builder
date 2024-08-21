@@ -1,8 +1,6 @@
 #!/bin/bash
 
 set -exo pipefail
-LLVM_VERSION=17
-
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
@@ -17,9 +15,8 @@ DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 
 cd /usr/bin
 
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-./llvm.sh ${LLVM_VERSION}
+wget https://fuzzcorp-dist-a9302fb.s3.us-east-2.amazonaws.com/llvmorg-17.0.6.zip
+unzip llvmorg-17.0.6.zip
 
 # install rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -28,9 +25,9 @@ rustup toolchain install nightly
 rustup default nightly
 rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
 
-ln -s "../lib/llvm-${LLVM_VERSION}/bin/clang" clang
-ln -s "../lib/llvm-${LLVM_VERSION}/bin/clang++" clang++
+ln -s "/usr/bin/llvmorg-17.0.6/bin/clang" clang
+ln -s "/usr/bin/llvmorg-17.0.6/bin/clang++" clang++
 
-ln -sf /usr/bin/ld.lld-17 /usr/bin/ld
-update-alternatives --install /usr/bin/cc cc "/lib/llvm-${LLVM_VERSION}/bin/clang" 50
-update-alternatives --install /usr/bin/c++ c++ "/lib/llvm-${LLVM_VERSION}/bin/clang++" 50
+ln -sf //usr/bin/llvmorg-17.0.6/bin/ld.lld /usr/bin/ld
+update-alternatives --install /usr/bin/cc cc "/usr/bin/llvmorg-17.0.6/bin/clang" 50
+update-alternatives --install /usr/bin/c++ c++ "/usr/bin/llvmorg-17.0.6/bin/clang++" 50
