@@ -6,4 +6,5 @@ export HOME=/root
 echo $PATH
 echo `which cargo`
 git config --global --add safe.directory /github/workspace
-exec bash -c "PATH=/usr/bin/llvmorg-17.0.6/bin:\$PATH $@"
+export PATH="/usr/bin/llvmorg-17.0.6/bin:$PATH"
+exec bash -c "$@"
