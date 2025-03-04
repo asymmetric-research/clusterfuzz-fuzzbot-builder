@@ -28,9 +28,10 @@ rustup toolchain install nightly
 rustup default nightly
 rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
 
-ln -s "../lib/llvm-${LLVM_VERSION}/bin/clang" clang
-ln -s "../lib/llvm-${LLVM_VERSION}/bin/clang++" clang++
+ln -s  "../lib/llvm-${LLVM_VERSION}/bin/clang"        clang
+ln -s  "../lib/llvm-${LLVM_VERSION}/bin/clang++"      clang++
+ln -s  "../lib/llvm-${LLVM_VERSION}/bin/llvm-config"  llvm-config
+ln -sf "/lib/llvm-${LLVM_VERSION}/bin/ld.lld"         /usr/bin/ld
 
-ln -sf /usr/bin/ld.lld-17 /usr/bin/ld
 update-alternatives --install /usr/bin/cc cc "/lib/llvm-${LLVM_VERSION}/bin/clang" 50
 update-alternatives --install /usr/bin/c++ c++ "/lib/llvm-${LLVM_VERSION}/bin/clang++" 50
