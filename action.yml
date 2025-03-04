@@ -6,6 +6,6 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://anthonylh/llvm-patched-libfuzzer'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
