@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -exo pipefail
-LLVM_VERSION=18
+LLVM_VERSION=19
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
